@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .arrowDesign{
+    @apply cursor-pointer text-5xl text-font02 hover:text-font03 hover:bg-font02 border-2 border-font02 p-2 duration-300 rounded-full
+  }
+}
+
+.active{
+    color: #B47000;
+}
