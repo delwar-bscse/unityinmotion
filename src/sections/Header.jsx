@@ -7,11 +7,57 @@ import { IoIosArrowDown } from "react-icons/io";
 import { logo, profile01 } from "../assets/assets";
 import MyProfileModal from "../modals/MyProfileModal";
 import { useState } from "react";
+import RegistrationModal from "../modals/RegistrationModal";
+import LoginModal from "../modals/LoginModal";
+import ForgotPasswordModal from "../modals/ForgotPasswordModal";
 
 const Header = () => {
   const location = useLocation();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [user,setUser] = useState(true);
+  const [user,setUser] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
+
+  // Handle User Login and Loout //
+  const loginUser = () =>{
+    setUser(true);
+  }
+
+  const logoutUser = () =>{
+    setIsProfileModalOpen(false);
+    setUser(false);
+  }
+
+  // For Register Modal //
+  const openRegisterModal = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(true);
+  };
+
+  const closeRegisterModal = () => {
+    setIsRegisterModalOpen(false);
+  };
+
+  // For Login Modal //
+  const openLoginModal = () => {
+    setIsRegisterModalOpen(false);
+    setIsLoginModalOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  // For Forgot Modal //
+  const openForgotModal = () => {
+    setIsLoginModalOpen(false);
+    setIsForgotModalOpen(true);
+  };
+
+  const closeForgotModal = () => {
+    setIsForgotModalOpen(false);
+  };
 
 
   return (
@@ -38,6 +84,7 @@ const Header = () => {
                 <button className="text-font01 font-bold"><LuShoppingCart  size={28} /></button>
                 {user && <button className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></button>}
               </div>
+              {/* ------------ Control Profile, Login, Logout -------------- */}
               <div>
                 { user ? 
                 (<button className="flex justify-center items-center gap-1" onClick={()=>setIsProfileModalOpen(!isProfileModalOpen)}>
@@ -45,16 +92,25 @@ const Header = () => {
                   <IoIosArrowDown size={16} />
                 </button>) :
                 (<div className="text-sm gap-5 flex">
-                  <button className=" border-[1px] border-primary text-primary px-10 py-4">Log In</button>
-                  <button className=" bg-primary text-gray-100 px-10 py-4">Sign Up</button>
+                  <button onClick={openLoginModal}  className=" border-[1px] border-primary text-primary px-10 py-4">Log In</button>
+                  <button onClick={openRegisterModal} className=" bg-primary text-gray-100 px-10 py-4">Sign Up</button>
                 </div>)
                 }
               </div>
             </div>
+
             {/* ------------ My Profile Modal -------------- */}
-            {
-              isProfileModalOpen && <MyProfileModal />
-            }
+            {isProfileModalOpen && <MyProfileModal logoutUser={logoutUser}/>}
+
+            {/* ------------ My Profile Modal -------------- */}
+            {isRegisterModalOpen && <RegistrationModal isOpen={isRegisterModalOpen} onClose={closeRegisterModal} openLoginModal={openLoginModal}/>}
+
+            {/* ------------ My Profile Modal -------------- */}
+            {isLoginModalOpen && <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} openRegisterModal={openRegisterModal} openForgotModal={openForgotModal} loginUser={loginUser}/>}
+
+            {/* ------------ My Profile Modal -------------- */}
+            {isForgotModalOpen && <ForgotPasswordModal isOpen={isForgotModalOpen} onClose={closeForgotModal}/>}
+
           </div>
         </div>
       </header>

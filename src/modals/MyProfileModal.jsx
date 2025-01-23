@@ -3,7 +3,7 @@ import { BiUser } from "react-icons/bi";
 import { RiLogoutBoxLine, RiChatHistoryLine } from "react-icons/ri";
 import { MdOutlineFeedback } from "react-icons/md";
 
-const MyProfileModal = () => {
+const MyProfileModal = ({logoutUser}) => {
   return (
     <div className="absolute top-16 right-0">
       <div className="bg-white rounded-lg p-6 w-452">
@@ -20,7 +20,7 @@ const MyProfileModal = () => {
             <MdOutlineFeedback size={24}/>
             <span className="ml-2">Feedback</span>
           </li>
-          <li className="flex items-center hover:opacity-70 cursor-pointer">
+          <li onClick={logoutUser} className="flex items-center hover:opacity-70 cursor-pointer">
             <RiLogoutBoxLine size={24}/>
             <span className="ml-2">Log Out</span>
           </li>
