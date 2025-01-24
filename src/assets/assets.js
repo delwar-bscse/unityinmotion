@@ -1,6 +1,7 @@
 import logo from './Logo.png';
 import logo02 from './Logo02.png';
 
+import verified from './verified.gif'
 import paymentCard from './payment.png';
 
 import detailImage from './details.png';
@@ -35,7 +36,7 @@ import academy04 from './Academy/academy04.png'
 import academy05 from './Academy/academy05.jpeg'
 
 export {
-  logo, logo02, detailImage, freeClass, paymentCard,
+  logo, logo02, detailImage, freeClass, paymentCard, verified,
   profile01, profile02,
   blog01, blog02, blog03,
   aboutus01, aboutus02,

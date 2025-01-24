@@ -13,6 +13,9 @@ import ProductDetails from "./pages/ProductDetails";
 import AcademyTutorial from "./pages/AcademyTutorial";
 import ScrollToTop from "./layouts/ScrollToTop";
 import MyProfile from "./pages/MyProfile";
+import ProductPayment from "./pages/ProductPayment";
+import ProductPaymentDetails from "./pages/ProductPaymentDetails";
+import ProductPaymentConfirm from "./pages/ProductPaymentConfirm";
 
 
 
@@ -23,7 +26,6 @@ const Routers = () => {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="myprofile" element={<MyProfile />} />
@@ -31,6 +33,9 @@ const Routers = () => {
           <Route path="academytostudio/:academyId" element={<AcademyTutorial />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:productId" element={<ProductDetails />} />
+          <Route path="shop/product-payment/:productId" element={<ProductPayment />} />
+          <Route path="shop/product-payment-details/:productId" element={<ProductPaymentDetails />} />
+          <Route path="shop/product-payment-confirm/:productId" element={<ProductPaymentConfirm />} />
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="contactus" element={<ContactUs />} />
           <Route path="blog" element={<Blog />} />
@@ -38,13 +43,6 @@ const Routers = () => {
           <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="payment" element={<Payment />} />
-
-        {/* Admin Routes */}
-        {/* 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="dashboard" element={<AdminDashboard />} />
-        </Route> 
-        */}
       </Routes>
     </BrowserRouter>
   );

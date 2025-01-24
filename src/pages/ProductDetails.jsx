@@ -64,7 +64,7 @@ const ProductDetails = () => {
               </button>
             </div>
             <button className='w-full py-5 border-[1px] border-gray-300 text-font01'>Add to Cart</button>
-            <button className='w-full py-5 bg-font01 text-font03'>Buy Now</button>
+            <Link to={`/shop/product-payment/${productId}`} className='w-full py-5 bg-font01 text-font03 block text-center'>Buy Now</Link>
             <p className='leading-10 tracking-wider'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
             <div className='space-y-4'>
               <p className='text-xl font-semibold'>INCLUDES : </p>

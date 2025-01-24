@@ -22,7 +22,7 @@ const Payment = () => {
 
   return (
     <div className='container mx-auto'>
-      <h1 className='text-6xl text-font01 mt-32'>Payment</h1>
+      <h1 className='text-6xl text-font01 mt-12'>Payment</h1>
       <div className='flex flex-col justify-center items-center mt-10 mb-32'>
         <div className='flex justify-center items-center'>
           <img src={paymentCard} alt="Payment Card" className='w-[300px] h-auto'/>
@@ -160,7 +160,7 @@ const Payment = () => {
 
           <button
             type="submit"
-            className="mt-6 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800"
+            className="mt-6 w-full bg-black text-white py-5 hover:bg-gray-800"
           >
             Confirm Pay
           </button>

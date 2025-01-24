@@ -15,6 +15,7 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
     logoutUser();
     navigate("/")
   }
+  
   return (
     <div className="absolute top-16 right-0">
       <div className="bg-white rounded-lg p-6 w-452">
