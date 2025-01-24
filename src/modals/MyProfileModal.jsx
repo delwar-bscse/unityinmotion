@@ -2,13 +2,24 @@ import React from 'react';
 import { BiUser } from "react-icons/bi";
 import { RiLogoutBoxLine, RiChatHistoryLine } from "react-icons/ri";
 import { MdOutlineFeedback } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
-const MyProfileModal = ({logoutUser}) => {
+const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
+  const navigate = useNavigate();
+
+  const handleMyProfileClick = () =>{
+    setIsProfileModalOpen(false);
+    navigate("/myprofile");
+  }
+  const handleLogOutClick = () =>{
+    logoutUser();
+    navigate("/")
+  }
   return (
     <div className="absolute top-16 right-0">
       <div className="bg-white rounded-lg p-6 w-452">
         <ul className="space-y-8 text-font01">
-          <li className="flex items-center hover:opacity-70 cursor-pointer">
+          <li onClick={handleMyProfileClick} className="flex items-center hover:opacity-70 cursor-pointer">
             <BiUser size={24}/>
             <span className="ml-2">My Profile</span>
           </li>
@@ -20,7 +31,7 @@ const MyProfileModal = ({logoutUser}) => {
             <MdOutlineFeedback size={24}/>
             <span className="ml-2">Feedback</span>
           </li>
-          <li onClick={logoutUser} className="flex items-center hover:opacity-70 cursor-pointer">
+          <li onClick={handleLogOutClick} className="flex items-center hover:opacity-70 cursor-pointer">
             <RiLogoutBoxLine size={24}/>
             <span className="ml-2">Log Out</span>
           </li>

@@ -100,7 +100,7 @@ const Header = () => {
             </div>
 
             {/* ------------ My Profile Modal -------------- */}
-            {isProfileModalOpen && <MyProfileModal logoutUser={logoutUser}/>}
+            {isProfileModalOpen && <MyProfileModal logoutUser={logoutUser} setIsProfileModalOpen={setIsProfileModalOpen}/>}
 
             {/* ------------ My Profile Modal -------------- */}
             {isRegisterModalOpen && <RegistrationModal isOpen={isRegisterModalOpen} onClose={closeRegisterModal} openLoginModal={openLoginModal}/>}

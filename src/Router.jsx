@@ -12,6 +12,7 @@ import Payment from "./pages/Payment";
 import ProductDetails from "./pages/ProductDetails";
 import AcademyTutorial from "./pages/AcademyTutorial";
 import ScrollToTop from "./layouts/ScrollToTop";
+import MyProfile from "./pages/MyProfile";
 
 
 
@@ -25,6 +26,7 @@ const Routers = () => {
         {/* Public Routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="myprofile" element={<MyProfile />} />
           <Route path="academytostudio" element={<AcademyToStudio />} />
           <Route path="academytostudio/:academyId" element={<AcademyTutorial />} />
           <Route path="shop" element={<Shop />} />
