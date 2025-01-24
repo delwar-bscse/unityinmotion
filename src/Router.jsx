@@ -11,6 +11,7 @@ import BlogDetails from "./pages/BlogDetails";
 import Payment from "./pages/Payment";
 import ProductDetails from "./pages/ProductDetails";
 import AcademyTutorial from "./pages/AcademyTutorial";
+import ScrollToTop from "./layouts/ScrollToTop";
 
 
 
@@ -19,6 +20,7 @@ import AcademyTutorial from "./pages/AcademyTutorial";
 const Routers = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Layout />}>
