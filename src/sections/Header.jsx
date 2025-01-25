@@ -10,14 +10,25 @@ import { useState } from "react";
 import RegistrationModal from "../modals/RegistrationModal";
 import LoginModal from "../modals/LoginModal";
 import ForgotPasswordModal from "../modals/ForgotPasswordModal";
+import SearchProductModal from "../modals/SearchProductModal";
 
 const Header = () => {
   const location = useLocation();
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [user,setUser] = useState(true);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+
+  // Handle User Login and Loout //
+  const openProductSearchModal = () =>{
+    setIsSearchModalOpen(true);
+  }
+
+  const closeProductSearchModal = () =>{
+    setIsSearchModalOpen(false);
+  }
 
   // Handle User Login and Loout //
   const loginUser = () =>{
@@ -80,7 +91,7 @@ const Header = () => {
           <div className="relative">
             <div className="flex items-center gap-6">
               <div className="flex justify-center items-center gap-4">
-                <button className="text-font01 font-bold"><FiSearch  size={28} /></button>
+                <button onClick={openProductSearchModal} className="text-font01 font-bold"><FiSearch  size={28} /></button>
                 <Link to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
                 {user && <button className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></button>}
               </div>
@@ -110,6 +121,9 @@ const Header = () => {
 
             {/* ------------ My Profile Modal -------------- */}
             {isForgotModalOpen && <ForgotPasswordModal isOpen={isForgotModalOpen} onClose={closeForgotModal}/>}
+
+            {/* ------------ My Profile Modal -------------- */}
+            {isSearchModalOpen && <SearchProductModal isOpen={isSearchModalOpen} onClose={closeProductSearchModal}/>}
 
           </div>
         </div>
