@@ -1,22 +1,52 @@
 import React, { useEffect, useState } from 'react'
-import {Link, useParams} from 'react-router-dom'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import { FaHome } from "react-icons/fa"
 import { TbSlash } from "react-icons/tb";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { productsDatas, productsDatas2 } from '../constants/productsDatas';
 import ProductCart from '../components/ProductCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart } from '../redux/slices/cartSlice';
 
 const ProductDetails = () => {
+  const items = useSelector(state => state.cart.items);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {productId} = useParams();
   const [singleProduct, setSingleProduct] = useState(null);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
+
+  const addToCartHandler = () => {
+    dispatch(addItemToCart({
+      id:productId,
+      name:singleProduct.name,
+      productImg:singleProduct.productImg,
+      quantity:count,
+      price:singleProduct.price
+    }));
+  };
+  const buyNow = () => {
+    dispatch(addItemToCart({
+      id:productId,
+      name:singleProduct.name,
+      productImg:singleProduct.productImg,
+      quantity:count,
+      price:singleProduct.price
+    }));
+    navigate(`/shop/product-payment/${productId}`);
+  };
+
 
   useEffect(()=>{
     const product = productsDatas.filter((product)=>product.id.toString()===productId)[0];
     setSingleProduct(product);
-    setCount(0);
-    console.log(product);
+    setCount(1);
   },[productId])
+
+  useEffect(()=>{
+    const singleProduct = items?.find((product)=>product.id.toString()===productId);
+    setCount(singleProduct?.quantity || 1);
+  },[items])
 
   return (
     <div className='text-font01'>
@@ -63,8 +93,8 @@ const ProductDetails = () => {
                 <FiPlus />
               </button>
             </div>
-            <button className='w-full py-5 border-[1px] border-gray-300 text-font01'>Add to Cart</button>
-            <Link to={`/shop/product-payment/${productId}`} className='w-full py-5 bg-font01 text-font03 block text-center'>Buy Now</Link>
+            <button onClick={addToCartHandler} className='w-full py-5 border-[1px] border-gray-300 text-font01 active:bg-gray-200'>Add to Cart</button>
+            <button onClick={buyNow} className='w-full py-5 bg-font01 text-font03 block text-center'>Buy Now</button>
             <p className='leading-10 tracking-wider'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
             <div className='space-y-4'>
               <p className='text-xl font-semibold'>INCLUDES : </p>

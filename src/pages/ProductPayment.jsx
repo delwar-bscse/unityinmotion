@@ -5,21 +5,23 @@ import { TbSlash } from "react-icons/tb";
 import { productsDatas, productsDatas2 } from '../constants/productsDatas';
 import ProductCart from '../components/ProductCart';
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { useDispatch } from 'react-redux';
+import { addpaymentInfo } from '../redux/slices/cartSlice';
 
 const ProductPayment = () => {
-  const {productId} = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {productId} = useParams();
   const [singleProduct, setSingleProduct] = useState(null);  
   const [paymentMethod, setPaymentMethod] = useState('Card');
   const [formData, setFormData] = useState({
-    email: '',
+    delevaryAddress: '',
     contact: ''
   });
 
   useEffect(()=>{
     const product = productsDatas.filter((product)=>product.id.toString()===productId)[0];
     setSingleProduct(product);
-    console.log(product);
   },[]);
 
   const handleOptionChange = (event) => {
@@ -34,9 +36,10 @@ const ProductPayment = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addpaymentInfo({...formData,paymentMethod}))
     navigate(`/shop/product-payment-details/${productId}`);
-    console.log(formData);
   };
 
   return (
@@ -62,18 +65,19 @@ const ProductPayment = () => {
             </div>
           </div>
           <div className='flex flex-col items-start gap-8'>
-            <form className='w-full'>
-              {/* Email Field */}
+            <form onSubmit={handleSubmit} className='w-full'>
+              {/* Address Field */}
               <div className="mb-4">
-                <label className="block font-semibold mb-2" htmlFor="email">Enter Your Email</label>
+                <label className="block font-semibold mb-2" htmlFor="delevaryAddress">Enter Your Address</label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder='Email Address'
-                  value={formData.email}
+                  type="text"
+                  id="delevaryAddress"
+                  name="delevaryAddress"
+                  placeholder='Your Address'
+                  value={formData.delevaryAddress}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 focus:outline-none"
+                  required
                 />
               </div>
               {/* Contact Field */}
@@ -84,14 +88,15 @@ const ProductPayment = () => {
                   id="contact"
                   name="contact"
                   placeholder='Contact Number'
-                  value={formData.email}
+                  value={formData.contact}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 focus:outline-none"
+                  required
                 />
               </div>
                 {/* Select payment method */}
                 <div className='my-5'>
-                  <h3 className='my-2 font-semibold text-font01'>Select Payment Method:</h3>
+                  <p className='my-2 font-semibold text-font01'>Select Payment Method:</p>
                   <div className='flex flex-col'>
                   <label className='border-[1px] border-gray-300 p-3'>
                     <input
@@ -123,21 +128,22 @@ const ProductPayment = () => {
                     id="termscondition"
                     name="termscondition"
                     className="m-1"
+                    required
                   />
                   <label htmlFor="termscondition" className="text-sm text-font01 text-opacity-70">I have read and agree to the terms and condition <br/>of this page as follow</label>
                 </div>
+                <div className='max-h-[250px] overflow-y-scroll text-font01 border-[1px] border-gray-300 my-10'>
+                  <div className='px-5 py-4 space-y-4'>
+                    <p className='text-xl font-semibold text-gray-700'>Terms and Conditions</p>
+                    <p className='leading-8 tracking-wide text-sm'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
+                    <p className='leading-8 tracking-wide text-sm'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
+                  </div>
+                </div>
+                <button type='submit' className='w-full py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
+                  <span className='text-xl'>Next</span>
+                  <MdOutlineArrowRightAlt size={32} />
+                </button>
             </form>
-            <div className='max-h-[250px] overflow-y-scroll text-font01 border-[1px] border-gray-300'>
-              <div className='px-5 py-4 space-y-4'>
-                <p className='text-xl font-semibold text-gray-700'>Terms and Conditions</p>
-                <p className='leading-8 tracking-wide text-sm'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
-                <p className='leading-8 tracking-wide text-sm'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident</p>
-              </div>
-            </div>
-            <button  onClick={handleSubmit} className='w-full py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
-              <span className='text-xl'>Next</span>
-              <MdOutlineArrowRightAlt size={32} />
-            </button>
           </div>
         </div>
         

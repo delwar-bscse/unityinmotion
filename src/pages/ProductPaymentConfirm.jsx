@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import { FaHome } from "react-icons/fa"
 import { TbSlash } from "react-icons/tb";
 import PaymentSuccessModal from '../modals/PaymentSuccessModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { placeOrder } from '../redux/slices/orderSlice';
+import {  removeItemFromCart } from '../redux/slices/cartSlice';
 
 const ProductPaymentConfirm = () => {
+  const {productId} = useParams();
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart);
   const [isOpenSuccessModal,setIsOpenSuccessModal] = useState(false);
   const [cardholder, setCardholder] = useState('');
   const [cardNumber, setCardNumber] = useState('');
@@ -13,6 +19,11 @@ const ProductPaymentConfirm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(placeOrder({ 
+      item: cart.items.find((item)=>item.id===productId),
+      payment: {...cart.payment,name:cardholder}
+    }));
+    dispatch(removeItemFromCart(productId));
     setIsOpenSuccessModal(!isOpenSuccessModal)
   };
 
@@ -26,7 +37,7 @@ const ProductPaymentConfirm = () => {
 
             <TbSlash />
 
-            <div className="">Product Payment Details</div>
+            <div className="">confirm Payment</div>
         </div>
         
         <h2 className='text-6xl py-5'>Details</h2>
@@ -42,6 +53,7 @@ const ProductPaymentConfirm = () => {
                 value={cardholder}
                 onChange={(e) => setCardholder(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
 
@@ -55,6 +67,7 @@ const ProductPaymentConfirm = () => {
                 value={cardNumber}
                 onChange={(e) => setCardNumber(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
 
@@ -69,6 +82,7 @@ const ProductPaymentConfirm = () => {
                   value={expiryDate}
                   onChange={(e) => setExpiryDate(e.target.value)}
                   className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                  required
                 />
               </div>
               <div>
@@ -81,6 +95,7 @@ const ProductPaymentConfirm = () => {
                   value={cvc}
                   onChange={(e) => setCvc(e.target.value)}
                   className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                  required
                 />
               </div>
             </div>

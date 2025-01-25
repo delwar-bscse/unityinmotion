@@ -29,7 +29,6 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     loginUser();
     onClose();
   };

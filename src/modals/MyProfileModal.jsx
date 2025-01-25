@@ -15,6 +15,10 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
     logoutUser();
     navigate("/")
   }
+  const handleOrder = () =>{
+    setIsProfileModalOpen(false);
+    navigate("/order");
+  }
   
   return (
     <div className="absolute top-16 right-0">
@@ -24,7 +28,7 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
             <BiUser size={24}/>
             <span className="ml-2">My Profile</span>
           </li>
-          <li className="flex items-center hover:opacity-70 cursor-pointer">
+          <li onClick={handleOrder} className="flex items-center hover:opacity-70 cursor-pointer">
             <RiChatHistoryLine size={24}/>
             <span className="ml-2">Order History</span>
           </li>

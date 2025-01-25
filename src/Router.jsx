@@ -16,6 +16,8 @@ import MyProfile from "./pages/MyProfile";
 import ProductPayment from "./pages/ProductPayment";
 import ProductPaymentDetails from "./pages/ProductPaymentDetails";
 import ProductPaymentConfirm from "./pages/ProductPaymentConfirm";
+import CartPage from "./pages/CartPage";
+import OrderPage from "./pages/OrderPage";
 
 
 
@@ -31,15 +33,17 @@ const Routers = () => {
           <Route path="myprofile" element={<MyProfile />} />
           <Route path="academytostudio" element={<AcademyToStudio />} />
           <Route path="academytostudio/:academyId" element={<AcademyTutorial />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="contactus" element={<ContactUs />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<BlogDetails />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:productId" element={<ProductDetails />} />
           <Route path="shop/product-payment/:productId" element={<ProductPayment />} />
           <Route path="shop/product-payment-details/:productId" element={<ProductPaymentDetails />} />
           <Route path="shop/product-payment-confirm/:productId" element={<ProductPaymentConfirm />} />
-          <Route path="aboutus" element={<AboutUs />} />
-          <Route path="contactus" element={<ContactUs />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="blog/:id" element={<BlogDetails />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="order" element={<OrderPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="payment" element={<Payment />} />

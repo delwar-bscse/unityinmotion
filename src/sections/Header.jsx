@@ -14,7 +14,7 @@ import ForgotPasswordModal from "../modals/ForgotPasswordModal";
 const Header = () => {
   const location = useLocation();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [user,setUser] = useState(false);
+  const [user,setUser] = useState(true);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
@@ -81,7 +81,7 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <div className="flex justify-center items-center gap-4">
                 <button className="text-font01 font-bold"><FiSearch  size={28} /></button>
-                <button className="text-font01 font-bold"><LuShoppingCart  size={28} /></button>
+                <Link to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
                 {user && <button className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></button>}
               </div>
               {/* ------------ Control Profile, Login, Logout -------------- */}

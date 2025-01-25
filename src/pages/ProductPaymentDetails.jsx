@@ -1,34 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import {Link, useParams} from 'react-router-dom'
+import React, { useState } from 'react'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import { FaHome } from "react-icons/fa"
 import { TbSlash } from "react-icons/tb";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { LuCalendarDays } from "react-icons/lu";
+import { addpaymentInfo } from '../redux/slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductPaymentDetails = () => {
-  const {productId} = useParams(); 
-  const [paymentMethod, setPaymentMethod] = useState('Card');
-  const [formData, setFormData] = useState({
-    delevaryAddress: '',
-    date: "In 3 Days",
-    contact: '',
-  });
+  const {delevaryAddress,contact,paymentMethod} = useSelector(state => state.cart.payment);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {productId} = useParams();
+  const [selectedPayment, setSelectedPayment] = useState(paymentMethod);
 
-  const handleOptionChange = (event) => {
-    setPaymentMethod(event.target.value);
-  };
 
-  const handleInputChange = (e) => {
-    const { name, value} = e.target;
-    setFormData({
-      ...formData,
-      [name] : value, 
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
+  const handlePayment = () => {
+    dispatch(addpaymentInfo())
+    navigate(`/shop/product-payment-confirm/${productId}`);
   };
 
   return (
@@ -49,18 +38,18 @@ const ProductPaymentDetails = () => {
 
         <div className='w-[600px]  mx-auto'>
           <div className='flex flex-col items-start gap-8'>
-            <form onSubmit={handleSubmit} className='w-full'>
+            <form className='w-full'>
               {/* Delevery Address */}
               <div className="mb-4">
-                <label className="block font-semibold mb-2" htmlFor="delevaryAddress">Enter Your Email</label>
+                <label className="block font-semibold mb-2" htmlFor="delevaryAddress">Delivery Address</label>
                 <input
                   type="text"
                   id="delevaryAddress"
                   name="delevaryAddress"
                   placeholder='Your Address'
-                  value={formData.delevaryAddress}
-                  onChange={handleInputChange}
+                  value={delevaryAddress}
                   className="w-full px-4 py-3 border border-gray-300 focus:outline-none"
+                  disabled
                 />
               </div>
               {/* Date Address */}
@@ -72,8 +61,7 @@ const ProductPaymentDetails = () => {
                     id="date"
                     name="date"
                     placeholder='3 Days'
-                    value={formData.date}
-                    onChange={handleInputChange}
+                    value="In 3 Days"
                     className=" grow py-3 focus:outline-none bg-transparent"
                     disabled
                   />
@@ -88,22 +76,21 @@ const ProductPaymentDetails = () => {
                   id="contact"
                   name="contact"
                   placeholder='Contact Number'
-                  value={formData.email}
-                  onChange={handleInputChange}
+                  value={contact}
                   className="w-full px-4 py-3 border border-gray-300 focus:outline-none"
+                  disabled
                 />
               </div>
               {/* Select payment method */}
-              <div className='my-5'>
-                <h3 className='my-2 font-semibold text-font01'>Select Payment Method:</h3>
-                <div className='flex flex-col'>
+              <div className="flex flex-col">
+                <p className='my-2 font-semibold text-font01'>Payment Method:</p>
                 <label className='border-[1px] border-gray-300 p-3'>
                   <input
                     type="radio"
                     value="Card"
-                    checked={paymentMethod === 'Card'}
-                    onChange={handleOptionChange}
                     className='mr-2'
+                    checked={selectedPayment === 'Card'} // Checked if 'Card' is selected
+                    disabled
                   />
                   Card
                 </label>
@@ -112,13 +99,12 @@ const ProductPaymentDetails = () => {
                   <input
                     type="radio"
                     value="PayPal"
-                    checked={paymentMethod === 'PayPal'}
-                    onChange={handleOptionChange}
                     className='mr-2'
+                    checked={selectedPayment === 'PayPal'} // Checked if 'PayPal' is selected
+                    disabled
                   />
                   PayPal
                 </label>
-                </div>
               </div>
             </form>
             <table className="w-full mx-auto text-font01 text-opacity-60 text-lg font-semibold">
@@ -141,10 +127,10 @@ const ProductPaymentDetails = () => {
                 </tr>
               </tbody>
             </table>
-            <Link to={`/shop/product-payment-confirm/${productId}`} className='w-full py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
+            <button onClick={handlePayment} className='w-full py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
               <span className='text-xl'>Payment</span>
               <MdOutlineArrowRightAlt size={32} />
-            </Link>
+            </button>
           </div>
         </div>
 
