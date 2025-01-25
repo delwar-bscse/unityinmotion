@@ -24,7 +24,11 @@ const ProductPaymentConfirm = () => {
       payment: {...cart.payment,name:cardholder}
     }));
     dispatch(removeItemFromCart(productId));
-    setIsOpenSuccessModal(!isOpenSuccessModal)
+    setIsOpenSuccessModal(!isOpenSuccessModal);
+    setCardholder('');
+    setCardNumber('');
+    setExpiryDate('');
+    setCvc('');
   };
 
   return (
