@@ -25,8 +25,8 @@ const OrderPage = () => {
 
         <div>
           <div className=''>
-            {!orders ? (
-              <p>No orders placed yet.</p>
+            {orders?.length===0 ? (
+              <p className='text-center text-xl font-semibold py-10'>No orders placed yet.</p>
             ) : (
               <div className='space-y-6'>
                 {orders.map(item => (

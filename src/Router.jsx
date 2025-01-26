@@ -18,9 +18,7 @@ import ProductPaymentDetails from "./pages/ProductPaymentDetails";
 import ProductPaymentConfirm from "./pages/ProductPaymentConfirm";
 import CartPage from "./pages/CartPage";
 import OrderPage from "./pages/OrderPage";
-
-
-
+import Notification from "./pages/Notification";
 
 
 const Routers = () => {
@@ -35,6 +33,7 @@ const Routers = () => {
           <Route path="academytostudio/:academyId" element={<AcademyTutorial />} />
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="contactus" element={<ContactUs />} />
+          <Route path="notifications" element={<Notification />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<BlogDetails />} />
           <Route path="shop" element={<Shop />} />

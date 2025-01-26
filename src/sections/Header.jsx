@@ -93,7 +93,7 @@ const Header = () => {
               <div className="flex justify-center items-center gap-4">
                 <button onClick={openProductSearchModal} className="text-font01 font-bold"><FiSearch  size={28} /></button>
                 <Link to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
-                {user && <button className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></button>}
+                {user && <Link to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
               </div>
               {/* ------------ Control Profile, Login, Logout -------------- */}
               <div>

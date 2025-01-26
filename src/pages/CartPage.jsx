@@ -32,7 +32,10 @@ const CartPage = () => {
         </div>
         
         <h2 className='text-6xl'>Cart History</h2>
-        
+        {console.log(cart.items.length)}
+        {cart.items.length === 0 ? (<div>
+          <h2 className='text-center text-xl font-semibold py-10'>Your Cart is Empty. Please add product to cart.</h2>
+        </div>) : (
         <ul className='flex flex-col gap-10 pt-10'>
           {cart.items.map(item => (
             <li key={item.id} className='flex justify-between items-center gap-5'>
@@ -50,7 +53,8 @@ const CartPage = () => {
               <button onClick={()=>removeFromCartHandler(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'> Remove from Cart</button>
             </li>
           ))}
-        </ul>
+        </ul>)
+        }
       </div>
     </div>
   )
