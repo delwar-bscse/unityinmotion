@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiUser } from "react-icons/bi";
 import { RiLogoutBoxLine, RiChatHistoryLine } from "react-icons/ri";
 import { MdOutlineFeedback } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import FeedbackModal from './FeedbackModal';
 
 const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
   const navigate = useNavigate();
+  const [isFeedbackOpen,setIsFeedbackOpen] = useState(false);
+
+  const openFeedback = () =>{
+    setIsFeedbackOpen(true);
+    navigate("/myprofile");
+  }
+  const closeFeedback = () =>{
+    setIsProfileModalOpen(false);
+    setIsFeedbackOpen(false);
+  }
 
   const handleMyProfileClick = () =>{
     setIsProfileModalOpen(false);
@@ -32,7 +43,7 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
             <RiChatHistoryLine size={24}/>
             <span className="ml-2">Order History</span>
           </li>
-          <li className="flex items-center hover:opacity-70 cursor-pointer">
+          <li onClick={openFeedback} className="flex items-center hover:opacity-70 cursor-pointer">
             <MdOutlineFeedback size={24}/>
             <span className="ml-2">Feedback</span>
           </li>
@@ -42,6 +53,9 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
           </li>
         </ul>
       </div>
+
+      {/* Feedback Modal */}
+      {isFeedbackOpen && <FeedbackModal isFeedbackOpen={isFeedbackOpen} closeFeedback={closeFeedback}/>}
     </div>
   );
 };
