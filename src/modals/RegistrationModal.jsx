@@ -30,7 +30,7 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01">
-      <div className='grid grid-cols-1 xl:grid-cols-2 w-full max-w-[600px] xl:max-w-[1200px] h-[700px] mx-auto px-4 xl:px-0'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 w-full max-w-[600px] xl:max-w-[1200px] mx-auto px-4 xl:px-0'>
         {/* ------------------------ Registration Form Extra Part ------------------------ */}
         <div className='hidden xl:flex items-center justify-center bg-font02 text-white relative'>
           <div className='w-[300px] flex flex-col items-center justify-center text-center '>
