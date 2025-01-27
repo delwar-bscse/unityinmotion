@@ -6,7 +6,7 @@
 
 @layer components{
   .arrowDesign{
-    @apply cursor-pointer text-5xl text-font02 hover:text-font03 hover:bg-font02 border-2 border-font02 p-2 duration-300 rounded-full
+    @apply cursor-pointer text-xl sml:text-3xl lgl:text-4xl text-font02 hover:text-font03 hover:bg-font02 border-2 border-font02 sml:p-1 duration-300 rounded-full
   }
 }
 
