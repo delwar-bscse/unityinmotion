@@ -46,9 +46,9 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
           </div>
         </div>
         {/* ------------------------ Registration Form ------------------------ */}
-        <div className="bg-font03 w-full p-8 relative">
-          <h2 className="text-3xl font-bold mb-5 text-center pt-20">Register A New Account</h2>
-          <p className='text-center mb-8'>Please enter your information to create account</p>
+        <div className="bg-font03 w-full p-8 max-md:pt-0 relative">
+          <h2 className="text-xl mdl:text-3xl font-bold mb-5 text-center pt-20">Register A New Account</h2>
+          <p className='text-sm dm:text-base text-center mb-8'>Please enter your information to create account</p>
           <form onSubmit={handleSubmit}>
             {/* Username Field */}
             <div className="mb-4">
