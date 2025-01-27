@@ -53,6 +53,7 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
                 value={formData.email}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                required
               />
             </div>
 
@@ -67,6 +68,7 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
                   value={formData.password}
                   onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                  required
                 />
                 <button
                   type="button"

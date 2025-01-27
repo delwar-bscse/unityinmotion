@@ -36,6 +36,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                required
               />
             </div>
 

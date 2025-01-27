@@ -60,6 +60,7 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
                 value={formData.username}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                required
               />
             </div>
 
@@ -73,6 +74,7 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                required
               />
             </div>
 
@@ -86,6 +88,7 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
                 value={formData.contact}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                required
               />
             </div>
 
@@ -100,6 +103,7 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
                   value={formData.password}
                   onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-gray-300 focus:outline-none"
+                  required
                 />
                 <button
                   type="button"

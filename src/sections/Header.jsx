@@ -163,10 +163,10 @@ const Header = () => {
           ))}
         </ul>
         {/* --------------------------- Sign in & Sign up --------------------------- */}
-        <div className="xl:hidden text-sm gap-5 flex flex-col">
+        {!user && <div className="xl:hidden text-sm gap-5 flex flex-col">
           <button onClick={openLoginModal}  className="border-[1px] border-primary text-primary px-10 py-3">Log In</button>
           <button onClick={openRegisterModal} className="bg-primary text-gray-100 px-10 py-3">Sign Up</button>
-        </div>
+        </div>}
       </div>
     </header>
   )
