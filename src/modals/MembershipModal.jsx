@@ -6,7 +6,7 @@ const MembershipModal = ({onCloseMembershipModal}) => {
   return (
     <div className='w-full max-w-[1300px] px-4 relative'>
       <div className='w-full overflow-x-scroll'>
-        <div className='min-w-[1280px] flex justify-center items-center gap-5 bg-gray-50 pt-10 lg:py-20 xl:px-8'>
+        <div className='min-w-[1020px] xl:min-w-[1280px] flex xl:justify-center items-center gap-5 bg-gray-50 pt-10 lg:py-20 xl:px-8'>
           <MembershipCart title="Basic Membership" onCloseMembershipModal={onCloseMembershipModal}/>
           <MembershipCart title="Standard Membership" onCloseMembershipModal={onCloseMembershipModal}/>
           <MembershipCart title="Premium Membership" onCloseMembershipModal={onCloseMembershipModal}/>
