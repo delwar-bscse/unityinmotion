@@ -75,9 +75,9 @@ const Footer = () => {
           </p>
           <p className='text-2xl hidden mdl:block'>|</p>
           <ul className='flex items-center gap-10'>
-            <li><LiaFacebook size={36}/></li>
-            <li><FaInstagram  size={28}/></li>
-            <li><BsTwitterX  size={24}/></li>
+            <li><Link to="https://www.facebook.com/" target='_blank'><LiaFacebook size={36}/></Link></li>
+            <li><Link to="https://www.instagram.com/" target='_blank'><FaInstagram  size={28}/></Link></li>
+            <li><Link to="https://x.com/" target='_blank'><BsTwitterX  size={24}/></Link></li>
           </ul>
         </div>
       </div>

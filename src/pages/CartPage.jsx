@@ -31,7 +31,8 @@ const CartPage = () => {
             <div className="">Cart</div>
         </div>
         
-        <h2 className='text-6xl'>Cart History</h2>
+        <h2 className='text-3xl mdl:text-5xl'>Cart History</h2>
+
         {console.log(cart.items.length)}
         {cart.items.length === 0 ? (<div>
           <h2 className='text-center text-xl font-semibold py-10'>Your Cart is Empty. Please add product to cart.</h2>

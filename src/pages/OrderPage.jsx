@@ -21,7 +21,7 @@ const OrderPage = () => {
             <div className="">Order</div>
         </div>
         
-        <h2 className='text-6xl'>Order Page</h2>
+        <h2 className='text-3xl mdl:text-5xl'>Order Page</h2>
 
         <div className=''>
           <div className='w-full overflow-x-auto'>
