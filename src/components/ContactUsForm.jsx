@@ -11,8 +11,8 @@ function ContactUsForm() {
   };
 
   return (
-    <div className="text-font01 my-32">
-      <h2 className="text-5xl font-semibold mb-6 text-center">Get in Touch</h2>
+    <div className="text-font01 my-6 mdl:my-32">
+      <h2 className="text-3xl mdl:text-4xl lgl:text-5xl font-semibold mb-6 text-center">Get in Touch</h2>
       <p className="my-4 text-center">Contact with us</p>
 
       <form onSubmit={handleSubmit}>

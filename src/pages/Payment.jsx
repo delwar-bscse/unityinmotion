@@ -17,20 +17,29 @@ const Payment = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({ lastName, email, phoneNumber, country, city, cardNumber, expiryDate, cvc });
-    setIsOpenSuccessModal(!isOpenSuccessModal)
+    setIsOpenSuccessModal(!isOpenSuccessModal);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setCountry("");
+    setCity("");
+    setCardNumber("");
+    setExpiryDate("");
+    setCvc("");
   };
 
   return (
-    <div className='container mx-auto'>
-      <h1 className='text-6xl text-font01 mt-12'>Payment</h1>
+    <div className='w-full max-w-[1280px] px-2  mx-auto'>
+      <h1 className='text-5xl mdl:text-6xl text-font01 mt-12'>Payment</h1>
       <div className='flex flex-col justify-center items-center mt-10 mb-32'>
         <div className='flex justify-center items-center'>
-          <img src={paymentCard} alt="Payment Card" className='w-[300px] h-auto'/>
+          <img src={paymentCard} alt="Payment Card" className='w-full max-w-[300px] h-auto'/>
         </div>
-        <form onSubmit={handleSubmit} className="w-[700px] mx-auto space-y-10 text-font01 text-opacity-80">
-          <h2 className="text-4xl text-center mb-16 text-opacity-100 text-font01">Personal Information</h2>
+        <form onSubmit={handleSubmit} className="w-full max-w-[700px] mx-auto space-y-10 text-font01 text-opacity-80">
+          <h2 className="text-2xl md:text-4xl text-center mb-16 text-opacity-100 text-font01">Personal Information</h2>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium">
                 First Name
@@ -41,6 +50,7 @@ const Payment = () => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
             <div>
@@ -53,11 +63,12 @@ const Payment = () => {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="grid  grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium">
                 Email
@@ -68,6 +79,7 @@ const Payment = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
             <div>
@@ -80,11 +92,12 @@ const Payment = () => {
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             <div>
               <label htmlFor="country" className="block text-sm font-medium">
                 Country
@@ -95,6 +108,7 @@ const Payment = () => {
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
             <div>
@@ -107,6 +121,7 @@ const Payment = () => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
           </div>
@@ -121,10 +136,11 @@ const Payment = () => {
               value={cardNumber}
               onChange={(e) => setCardNumber(e.target.value)}
               className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             <div>
               <label htmlFor="expiryDate" className="block text-sm font-medium">
                 MM/YY
@@ -135,6 +151,7 @@ const Payment = () => {
                 value={expiryDate}
                 onChange={(e) => setExpiryDate(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
             <div>
@@ -147,6 +164,7 @@ const Payment = () => {
                 value={cvc}
                 onChange={(e) => setCvc(e.target.value)}
                 className=" p-1 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500"
+                required
               />
             </div>
           </div>

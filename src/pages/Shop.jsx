@@ -9,7 +9,7 @@ import ProductFilter from '../components/ProductFilter';
 const Shop = () => {
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 py-10'>
+      <div className='max-w-[1280px] w-full px-2 mx-auto space-y-6 py-10'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -26,7 +26,7 @@ const Shop = () => {
           <ProductFilter />
         </div>
         
-        <div className='grid grid-cols-4 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8'>
           {productsDatas?.map((singleProduct)=>(
             <div key={singleProduct?.id}>
               <ProductCart singleProduct={singleProduct}/>

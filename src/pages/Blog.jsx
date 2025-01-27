@@ -15,7 +15,7 @@ const Blog = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='max-w-[1280px] w-full mx-auto space-y-6 pt-10 pb-28'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -29,7 +29,7 @@ const Blog = () => {
         
         <h2 className='text-6xl'>Blog</h2>
           
-        <div className="bg-gray-100 text-font01 font-light text-xl py-3 rounded-lg p-2 flex justify-start items-center gap-3 w-[500px]">
+        <div className="bg-gray-100 text-font01 font-light text-xl py-3 rounded-lg p-2 flex justify-start items-center gap-3 max-w-[500px] mx-1">
           <RiSearch2Line className='cursor-pointer'  size={30}/>
           <input 
             type="text" 
@@ -40,7 +40,7 @@ const Blog = () => {
           />
         </div>
 
-        <div className='grid grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 mdl:grid-cols-2 xl:grid-cols-3 gap-5'>
           {blogDatas?.map((singleBlog)=>(
             <div key={singleBlog?.id}>
               <SingleBlog singleBlog={singleBlog}/>

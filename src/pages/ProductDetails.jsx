@@ -50,7 +50,7 @@ const ProductDetails = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='max-w-[1280px] w-full px-2 mx-auto space-y-6 pt-10 pb-28'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -64,25 +64,25 @@ const ProductDetails = () => {
         
         <h2 className='text-6xl'>Details</h2>
 
-        <div className='grid grid-cols-2 gap-16'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
           <div className='space-y-5'>
-            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full py-20'>
-              <img src={singleProduct?.productImg} alt="product image" className='w-[500px] h-[500px] group-hover:scale-110 transition-all duration-300' />
+            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full'>
+              <img src={singleProduct?.productImg} alt="product image" className='w-full max-w-[500px] h-full max-h-[500px] group-hover:scale-105 transition-all duration-300' />
             </div>
-            <div className='grid grid-cols-3 gap-5'>
-              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full'>
-                <img src={singleProduct?.productImg} alt="product image" className='w-[150px] h-[150px] group-hover:scale-110 transition-all duration-300' />
+            <div className='flex justify-between gap-1'>
+              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center max-w-[150px] max-h-[150px]'>
+                <img src={singleProduct?.productImg} alt="product image" className='w-full h-full group-hover:scale-110 transition-all duration-300' />
               </div>
-              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full'>
-                <img src={singleProduct?.productImg} alt="product image" className='w-[150px] h-[150px] group-hover:scale-110 transition-all duration-300' />
+              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center max-w-[150px] max-h-[150px]'>
+                <img src={singleProduct?.productImg} alt="product image" className='w-full h-full group-hover:scale-110 transition-all duration-300' />
               </div>
-              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full'>
-                <img src={singleProduct?.productImg} alt="product image" className='w-[150px] h-[150px] group-hover:scale-110 transition-all duration-300' />
+              <div className='border-2 border-gray-200 p-5 group flex justify-center items-center max-w-[150px] max-h-[150px]'>
+                <img src={singleProduct?.productImg} alt="product image" className='w-full h-full group-hover:scale-110 transition-all duration-300' />
               </div>
             </div>
           </div>
           <div className='flex flex-col items-start gap-8'>
-            <h3 className='text-5xl text-font01'>The Dumball</h3>
+            <h3 className='text-4xl md:text-5xl text-font01'>The Dumball</h3>
             <p className='text-2xl'>Price : ${singleProduct?.price}.00 CDN</p>
             <div className='w-[260px] flex justify-around items-center text-2xl border-[1px] border-gray-300 py-3'>
               <button onClick={()=>setCount(count-1)}disabled={count <= 1}>
@@ -105,13 +105,14 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-          
+        
+        {/* -------------------- View All Product -------------------- */}
         <div className=' border-t-[1px] border-t-gray-300'>
           <div className='flex justify-between items-center my-10'>
-            <h2 className='text-4xl'>You may also like</h2>
-            <Link to="/shop" className='text-font02 underline text-2xl'>View All</Link>
+            <h2 className='text-2xl mdl:text-4xl'>You may also like</h2>
+            <Link to="/shop" className='text-font02 underline text-lg mdl:text-2xl'>View All</Link>
           </div>
-          <div className='grid grid-cols-4 gap-8 mt-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-4'>
             {productsDatas2?.map((singleProduct)=>(
               <div key={singleProduct?.id}>
                 <ProductCart singleProduct={singleProduct}/>

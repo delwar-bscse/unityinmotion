@@ -22,7 +22,7 @@ const ProductPaymentDetails = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='w-full max-w-[1280px] px-2  mx-auto space-y-6 pt-10 pb-28'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -31,12 +31,12 @@ const ProductPaymentDetails = () => {
 
             <TbSlash />
 
-            <div className="">Product Payment Details</div>
+            <div className="text-base md:text-xl">Product Payment Details</div>
         </div>
         
-        <h2 className='text-6xl'>Details</h2>
+        <h2 className='text-4xl md:text-5xl'>Details</h2>
 
-        <div className='w-[600px]  mx-auto'>
+        <div className='w-full max-w-[600px]  mx-auto'>
           <div className='flex flex-col items-start gap-8'>
             <form className='w-full'>
               {/* Delevery Address */}
@@ -127,7 +127,7 @@ const ProductPaymentDetails = () => {
                 </tr>
               </tbody>
             </table>
-            <button onClick={handlePayment} className='w-full py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
+            <button onClick={handlePayment} className='w-full py-2 md:py-5 bg-font01 text-font03 flex justify-center items-center gap-3'>
               <span className='text-xl'>Payment</span>
               <MdOutlineArrowRightAlt size={32} />
             </button>

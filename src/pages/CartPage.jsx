@@ -19,7 +19,7 @@ const CartPage = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 py-10'>
+      <div className='w-full max-w-[1280px] px-2 mx-auto space-y-6 py-10'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -36,11 +36,11 @@ const CartPage = () => {
         {cart.items.length === 0 ? (<div>
           <h2 className='text-center text-xl font-semibold py-10'>Your Cart is Empty. Please add product to cart.</h2>
         </div>) : (
-        <ul className='flex flex-col gap-10 pt-10'>
+        <ul className='w-full overflow-x-auto flex flex-col gap-10 pt-10'>
           {cart.items.map(item => (
-            <li key={item.id} className='flex justify-between items-center gap-5'>
-              <div>
-                <img src={item.productImg} alt="product" className='w-[200px] h-[200px]' />
+            <li key={item.id} className='min-w-[1000px] flex justify-between items-center gap-5'>
+              <div className='w-[100px] mdl:w-[200px] h-[100px] mdl:h-[200px]'>
+                <img src={item.productImg} alt="product" className='w-full h-full' />
               </div>
               <div>
                 <p className='text-font01 text-xl'>{item.name}</p>
@@ -50,7 +50,7 @@ const CartPage = () => {
               <p className='text-2xl font-semibold'>{item.quantity}</p>
               <p className='text-2xl font-semibold'>${item.totalPrice} CND</p>
               <button onClick={()=>confirmOrder(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'> Confirm Order</button>
-              <button onClick={()=>removeFromCartHandler(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'> Remove from Cart</button>
+              <button onClick={()=>removeFromCartHandler(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'>Remove</button>
             </li>
           ))}
         </ul>)

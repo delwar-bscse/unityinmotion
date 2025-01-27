@@ -25,7 +25,7 @@ const SortDropdown = () => {
   return (
     <div className="relative inline-block text-left">
       <div>
-        <button onClick={handleSort} type="button" className="flex gap-10 items-center" >
+        <button onClick={handleSort} type="button" className="flex gap-2 mdl:gap-10 items-center" >
           <span>Sort By</span>
           <MdKeyboardArrowDown  size={28} className={`${isSortOpen && 'rotate-180'} transition-all duration-300`}/>
         </button>

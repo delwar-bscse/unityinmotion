@@ -33,7 +33,7 @@ const ProductPaymentConfirm = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='w-full max-w-[1280px] px-2 mx-auto space-y-6 pt-10 pb-28'>
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
                 <FaHome />
@@ -45,8 +45,8 @@ const ProductPaymentConfirm = () => {
         </div>
         
         <h2 className='text-6xl py-5'>Details</h2>
-        <div className='flex flex-col justify-center items-center pt-20 pb-32'>
-          <form onSubmit={handleSubmit} className="w-[700px] mx-auto space-y-10 text-font01 text-opacity-80">
+        <div className='flex flex-col justify-center items-center md:pt-20 md:pb-32'>
+          <form onSubmit={handleSubmit} className="w-full max-w-[700px] mx-auto space-y-10 text-font01 text-opacity-80">
             <div className="mt-4">
               <label htmlFor="cardholder" className="block text-sm font-medium">
                 Cardholder Name

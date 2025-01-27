@@ -45,19 +45,21 @@ const SearchProductModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
     <div onClick={handleClickOutside} className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01 p-4 mdl:p-0'>
-      <div ref={modalRef} onClick={(e) => e.stopPropagation()} className='w-full max-w-[700px] bg-font03 overflow-hidden flex flex-col justify-between '>
-        <div className=" text-font02 font-light text-xl py-3 px-4 flex justify-start items-center gap-3 border-2 border-gray-400 rounded-md m-5 mb-2">
-          <input 
-            type="text" 
-            placeholder="Search here..." 
-            className="bg-transparent outline-none flex-1 text-font02 placeholder:text-font02" 
-            value={searchTerm} 
-            onChange={handleSearchChange}
-          />
-          <RiSearch2Line onClick={handleSearchButton} className='cursor-pointer text-font02' size={28}/>
+      <div ref={modalRef} onClick={(e) => e.stopPropagation()} className='w-full max-w-[700px] bg-font03 overflow-hidden flex flex-col justify-between'>
+        <div className='p-5'>
+          <div className="text-font02 font-light text-xl py-3 px-4 w-full flex justify-start items-center gap-3 border-2 border-gray-400 rounded-md mb-2">
+            <input 
+              type="text" 
+              placeholder="Search here..." 
+              className="bg-transparent outline-none grow text-font02 placeholder:text-font02 placeholder:text-sm md:placeholder:text-base w-full" 
+              value={searchTerm} 
+              onChange={handleSearchChange}
+            />
+            <RiSearch2Line onClick={handleSearchButton} className='cursor-pointer text-font02' size={28}/>
+          </div>
         </div>
         <div className='mx-5'>
-        <div className='w-full max-h-[600px] overflow-y-auto bg-font03 space-y-3'>
+        <div className='w-full max-h-[300px] mdl:max-h-[600px] overflow-y-auto bg-font03 space-y-3'>
           {allFilterProducts?.map((singleProduct) => (
             <div  onClick={()=>handleSingleProduct(singleProduct?.id)} key={singleProduct?.id} className='flex items-center gap-8 hover:bg-gray-200 hover:duration-300 cursor-pointer'>
               <div className='bg-font03'>

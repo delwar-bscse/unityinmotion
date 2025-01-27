@@ -20,7 +20,7 @@ const AcademyTutorial = () => {
   };
   return (
     <div className='my-10'>
-      <div className='container mx-auto'>
+      <div className='w-full max-w-[1280px] px-2  mx-auto'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -50,7 +50,7 @@ const AcademyTutorial = () => {
           </div>
         </div>
 
-        <div className='flex flex-row gap-8'>
+        <div className='flex flex-col lgl:flex-row gap-8'>
           {/* ------------ Video side -------------- */}
           <div className=' basis-2/3'>
             <div className="flex flex-col items-center justify-center">
@@ -63,7 +63,7 @@ const AcademyTutorial = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className='flex items-center gap-10 text-lg text-font01 my-5'>
+            <div className='flex flex-wrap items-center gap-y-2 gap-x-4 md:gap-10 text-sm md:text-lg text-font01 my-5'>
               <p>Topic : Yoga</p>
               <p>Data : Mon 11/06/24</p>
               <p className='flex items-center gap-1'>
@@ -82,7 +82,7 @@ const AcademyTutorial = () => {
           </div>
           
           {/* ------------ Pie chart side -------------- */}
-          <div className=' basis-1/3 h-screen overflow-y-auto px-2'>
+          <div className=' basis-1/3 h-full max-h-[800px] overflow-y-auto px-2'>
             <ProgressPieChart  complete="80" uncomplete="20" />
             <div className='space-y-8 my-6'>
               {progressSeriesDatas?.map((singleProgress)=>(
@@ -95,10 +95,10 @@ const AcademyTutorial = () => {
         
         {/* ------------ more class like this -------------- */}
         <div className='flex justify-between items-center my-10'>
-          <h2 className='text-4xl text-font01'>More Class Like This</h2>
-          <Link to="/academytostudio" className='text-font02 underline text-2xl'>View All</Link>
+          <h2 className='text-2xl md:text-4xl text-font01'>More Class Like This</h2>
+          <Link to="/academytostudio" className='text-font02 underline text-lg md:text-2xl'>View All</Link>
         </div>
-        <div className='grid grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 mdl:grid-cols-2 xl:grid-cols-3 gap-8'>
           {academyStudioDatas2?.map((singleAcademy)=>(
             <div key={singleAcademy?.id}>
               <div className='w-full h-[300px] bg-font03 overflow-hidden'>

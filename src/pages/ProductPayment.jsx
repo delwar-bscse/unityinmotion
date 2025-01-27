@@ -44,7 +44,7 @@ const ProductPayment = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='w-full max-w-[1280px] px-2 mx-auto space-y-6 pt-10 pb-28'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -58,10 +58,10 @@ const ProductPayment = () => {
         
         <h2 className='text-6xl'>Details</h2>
 
-        <div className='grid grid-cols-2 gap-16'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-16'>
           <div className='space-y-5'>
-            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full py-20'>
-              <img src={singleProduct?.productImg} alt="product image" className='w-[500px] h-[500px] group-hover:scale-110 transition-all duration-300' />
+            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full max-w-[500px] h-full max-h-[500px] py-20'>
+              <img src={singleProduct?.productImg} alt="product image" className='w-full h-full group-hover:scale-110 transition-all duration-300' />
             </div>
           </div>
           <div className='flex flex-col items-start gap-8'>
@@ -150,10 +150,10 @@ const ProductPayment = () => {
         {/* ---------------------- you may also like - view all ------------------------- */}
         <div className='pt-10'>
           <div className='flex justify-between items-center my-10'>
-            <h2 className='text-4xl'>You may also like</h2>
-            <Link to="/shop" className='text-font02 underline text-2xl'>View All</Link>
+            <h2 className='text-2xl mdl:text-4xl'>You may also like</h2>
+            <Link to="/shop" className='text-font02 underline mdl:text-xl'>View All</Link>
           </div>
-          <div className='grid grid-cols-4 gap-8 mt-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-4'>
             {productsDatas2?.map((singleProduct)=>(
               <div key={singleProduct?.id}>
                 <ProductCart singleProduct={singleProduct}/>

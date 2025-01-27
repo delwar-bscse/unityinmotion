@@ -110,7 +110,7 @@ const Header = () => {
             <div className="hidden mdl:flex justify-center items-center gap-4">
               <button onClick={openProductSearchModal} className="text-font01 font-bold"><FiSearch  size={28} /></button>
               <Link to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
-              {user && <Link to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
+              {user && <Link onClick={()=>setIsMobileMenuOpen(false)} to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
             </div>
             {/* --------------------------- Control Profile, Login, Logout, Menu button --------------------------- */}
             <div className="flex justify-end items-center gap-2">
@@ -152,7 +152,7 @@ const Header = () => {
         <div className="mdl:hidden flex items-center gap-4 my-6">
           <button onClick={openProductSearchModal} className="text-font01 font-bold"><FiSearch  size={28} /></button>
           <Link onClick={()=>setIsMobileMenuOpen(false)} to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
-          {user && <Link to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
+          {user && <Link onClick={()=>setIsMobileMenuOpen(false)} to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
         </div>
         <ul className="text-base sm:text-xl flex flex-col font-semibold tracking-wider gap-6 my-6 text-font01">
           {navLinks?.map((singleLink,i)=>(
