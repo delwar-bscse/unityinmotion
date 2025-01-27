@@ -19,6 +19,8 @@ import ProductPaymentConfirm from "./pages/ProductPaymentConfirm";
 import CartPage from "./pages/CartPage";
 import OrderPage from "./pages/OrderPage";
 import Notification from "./pages/Notification";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsCondition from "./pages/TermsCondition";
 
 
 const Routers = () => {
@@ -43,6 +45,8 @@ const Routers = () => {
           <Route path="shop/product-payment-confirm/:productId" element={<ProductPaymentConfirm />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="order" element={<OrderPage />} />
+          <Route path="privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="termscondition" element={<TermsCondition />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="payment" element={<Payment />} />

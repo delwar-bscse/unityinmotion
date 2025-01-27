@@ -26,9 +26,9 @@ const Footer = () => {
           <div className='space-y-6 xl:pl-10'>
             <h2 className="text-2xl font-semibold md:mb-16  mb-6">Information</h2>
             <ul className='space-y-8'>
-              <li><Link>Contact Us</Link></li>
-              <li><Link>Privacy Policy</Link></li>
-              <li><Link>Terms & Conditions</Link></li>
+              <li><Link to="/contactus">Contact Us</Link></li>
+              <li><Link to="/privacypolicy">Privacy Policy</Link></li>
+              <li><Link to="/termscondition">Terms & Conditions</Link></li>
             </ul>
           </div>
           {/* --------------------------- Column 013--------------------------- */}
