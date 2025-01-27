@@ -20,7 +20,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01">
-      <div className='grid grid-cols-2 w-[1200px] h-[700px] mx-auto'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 w-full max-w-[600px] xl:max-w-[1200px] h-full max-h-[400px] xl:max-h-[700px] px-4 xl:px-0 mx-auto relative'>
         {/* ------------------------ Forgot Password Form ------------------------ */}
         <div className="bg-font03 flex flex-col justify-center items-center w-full relative">
           <h2 className="text-3xl font-bold mb-5 text-center pt-10">Forgot Password</h2>
@@ -51,19 +51,19 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
           </form>
         </div>
         {/* ------------------------ Forgot Password Extra Part ------------------------ */}
-        <div className='flex items-center justify-center bg-font02 text-white relative'>
+        <div className='hidden xl:flex items-center justify-center bg-font02 text-white relative'>
           <div className='w-[360px] flex flex-col items-center justify-center text-center '>
             <p className='text-xl font-semibold my-5 leading-10 tracking-widest'>Welcome to our forgot password page ! Provide your email for confirm 6 digit verification code.</p>
           </div>
-          {/* Close Button */}
-          <div className="flex justify-center mt-4 absolute top-0 right-4">
-            <button
-              onClick={onClose}
-              className=""
-            >
-              <IoClose className='text-font03 hover:text-opacity-70' size={40}/>
-            </button>
-          </div>
+        </div>
+        {/* Close Button */}
+        <div className="flex justify-center mt-4 absolute top-0 right-6 xl:right-4">
+          <button
+            onClick={onClose}
+            className=""
+          >
+            <IoClose className='xl:text-font03 text-font02 hover:text-opacity-70' size={40}/>
+          </button>
         </div>
       </div>
     </div>

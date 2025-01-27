@@ -5,7 +5,7 @@ const FreeClass = () => {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-8 py-20 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-20 ">
         <div className='flex flex-col items-start justify-center gap-8 text-font01'>
           <h2 className='text-5xl font-semibold'>Why You Choose Us</h2>
           <p className='leading-10 tracking-wide'>This class is a demo class, you get all the exercises, guidelines and tips related to fitness in our fitness course. So don't delay and join our community now.</p>

@@ -14,8 +14,8 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
     navigate("/myprofile");
   }
   const closeFeedback = () =>{
-    setIsProfileModalOpen(false);
     setIsFeedbackOpen(false);
+    setIsProfileModalOpen(false);
   }
 
   const handleMyProfileClick = () =>{
@@ -33,7 +33,7 @@ const MyProfileModal = ({logoutUser, setIsProfileModalOpen}) => {
   
   return (
     <div className="absolute top-16 right-0">
-      <div className="bg-white rounded-lg p-6 w-452">
+      <div className="bg-white rounded-lg p-6 w-[200px]">
         <ul className="space-y-8 text-font01">
           <li onClick={handleMyProfileClick} className="flex items-center hover:opacity-70 cursor-pointer">
             <BiUser size={24}/>

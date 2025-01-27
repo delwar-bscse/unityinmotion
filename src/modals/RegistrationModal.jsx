@@ -30,9 +30,9 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01">
-      <div className='grid grid-cols-2 w-[1200px] h-[700px] mx-auto'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 w-full max-w-[600px] xl:max-w-[1200px] h-[700px] mx-auto px-4 xl:px-0'>
         {/* ------------------------ Registration Form Extra Part ------------------------ */}
-        <div className='flex items-center justify-center bg-font02 text-white relative'>
+        <div className='hidden xl:flex items-center justify-center bg-font02 text-white relative'>
           <div className='w-[300px] flex flex-col items-center justify-center text-center '>
             <h2 className='text-4xl text-font03 font-bold my-20'>Welcome Back!</h2>
             <p className='text-lg font-semibold my-7'>Please Sign in into your account with the given details to continue</p>
@@ -46,8 +46,8 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
           </div>
         </div>
         {/* ------------------------ Registration Form ------------------------ */}
-        <div className="bg-font03 w-full max-w-lg p-8 relative">
-          <h2 className="text-3xl font-bold mb-5 text-center pt-10">Register A New Account</h2>
+        <div className="bg-font03 w-full p-8 relative">
+          <h2 className="text-3xl font-bold mb-5 text-center pt-20">Register A New Account</h2>
           <p className='text-center mb-8'>Please enter your information to create account</p>
           <form onSubmit={handleSubmit}>
             {/* Username Field */}

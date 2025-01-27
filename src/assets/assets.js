@@ -14,6 +14,7 @@ import blog01 from './Blogs/blog01.jpeg';
 import blog02 from './Blogs/blog02.jpeg';
 import blog03 from './Blogs/blog03.jpeg';
 
+import about from './AboutSection/about.jpg';
 import aboutus01 from './AboutSection/about01.jpeg';
 import aboutus02 from './AboutSection/about02.jpeg';
 
@@ -39,7 +40,7 @@ export {
   logo, logo02, detailImage, freeClass, paymentCard, verified,
   profile01, profile02,
   blog01, blog02, blog03,
-  aboutus01, aboutus02,
+  about, aboutus01, aboutus02,
   product_a01, product_a02, product_a03, product_a04,
   product_b01,product_b02,product_b03, product_b04,
   product_c01, product_c02, product_c03,

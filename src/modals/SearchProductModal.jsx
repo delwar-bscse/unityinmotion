@@ -44,8 +44,8 @@ const SearchProductModal = ({ isOpen, onClose }) => {
   
   if (!isOpen) return null;
   return (
-    <div onClick={handleClickOutside} className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01'>
-      <div ref={modalRef} onClick={(e) => e.stopPropagation()} className='w-[700px] min-h-[600px] bg-font03 overflow-hidden flex flex-col justify-between '>
+    <div onClick={handleClickOutside} className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01 p-4 mdl:p-0'>
+      <div ref={modalRef} onClick={(e) => e.stopPropagation()} className='w-full max-w-[700px] bg-font03 overflow-hidden flex flex-col justify-between '>
         <div className=" text-font02 font-light text-xl py-3 px-4 flex justify-start items-center gap-3 border-2 border-gray-400 rounded-md m-5 mb-2">
           <input 
             type="text" 

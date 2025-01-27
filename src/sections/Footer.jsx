@@ -14,22 +14,26 @@ const Footer = () => {
   const [email, setEmail] = useState('');
   return (
     <footer>
-      <div className='bg-primary text-font03 pt-20 pb-32'>
-        <div className='container mx-auto grid grid-cols-4 gap-8'>
+      <div className='w-full bg-primary text-font03 pt-20 pb-32'>
+      {/* --------------------------- Footer Up --------------------------- */}
+        <div className='w-full max-w-[1280px] px-4 xl:px-0 mx-auto grid grid-cols-1 mdl:grid-cols-2 lgl:grid-cols-4 gap-12 md:gap-8'>
+          {/* --------------------------- Column 01 --------------------------- */}
           <div className='space-y-6'>
             <img src={logo02} alt="Company Logo" />
             <p className='leading-10 tracking-wider'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
           </div>
-          <div className='space-y-6 pl-16'>
-            <h2 className="text-3xl font-semibold mb-16">Information</h2>
+          {/* --------------------------- Column 02 --------------------------- */}
+          <div className='space-y-6 xl:pl-10'>
+            <h2 className="text-2xl font-semibold md:mb-16  mb-6">Information</h2>
             <ul className='space-y-8'>
               <li><Link>Contact Us</Link></li>
               <li><Link>Privacy Policy</Link></li>
               <li><Link>Terms & Conditions</Link></li>
             </ul>
           </div>
+          {/* --------------------------- Column 013--------------------------- */}
           <div className=''>
-            <h1 className="text-3xl font-semibold mb-16">Help & Support</h1>
+            <h1 className="text-2xl font-semibold md:mb-16  mb-6">Help & Support</h1>
             <div className='space-y-6'>
               <div className='flex'>
                 <p className='flex gap-1 items-top'><AiOutlineMail size={24}/><span>Email : </span></p>
@@ -41,10 +45,11 @@ const Footer = () => {
               </div>
             </div>            
           </div>
+          {/* --------------------------- Column 04 --------------------------- */}
           <div>
-            <h2 className="text-3xl font-semibold mb-16">Newsletters Sigh Up</h2>
+            <h2 className="text-2xl font-semibold md:mb-16 mb-6">Newsletters Sigh Up</h2>
             <p className='mb-6'>Get Alert Directly Into Your Inbox After Each Post</p>
-            <div className="bg-font03 rounded-full p-1 box-border flex items-center overflow-hidden">
+            <div className="max-w-[500px] bg-font03 rounded-full p-1 box-border flex items-center overflow-hidden">
               <div className=" text-font01 flex-grow">
                 <input 
                   type="email" 
@@ -61,13 +66,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {/* --------------------------- Footer bottom --------------------------- */}
       <div className='bg-black'>
-        <div className='container mx-auto text-font03 text-lg flex justify-between items-center py-4'>
-          <p className='flex items-center'>
+        <div className='w-full max-w-[1280px] mx-auto text-font03 text-lg flex flex-col mdl:flex-row justify-between items-center gap-2 py-4 mdl:px-4'>
+          <p className='flex items-center text-sm sml:text-lg'>
             <FaRegCopyright />
             <span>2024Spaktech.Agency | All right Reserved</span>
           </p>
-          <p className='text-2xl'>|</p>
+          <p className='text-2xl hidden mdl:block'>|</p>
           <ul className='flex items-center gap-10'>
             <li><LiaFacebook size={36}/></li>
             <li><FaInstagram  size={28}/></li>

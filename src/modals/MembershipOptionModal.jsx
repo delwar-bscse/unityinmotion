@@ -12,8 +12,8 @@ const MembershipOptionModal = ({title,cdn,onCloseMembershipModal}) => {
   }
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
-      <div className='flex items-center justify-center p-16 bg-gray-100 relative'>
-        <div className="p-6 rounded-lg shadow-md">
+      <div className='flex items-center justify-center py-8 mdl:p-16 bg-gray-100 relative'>
+        <div className="p-4 rounded-lg shadow-md">
           <h2 className="text-3xl my-6 font-light text-font01 text-opacity-80 text-center">{title}</h2>
           <div className="py-4 flex items-end justify-center gap-3 mb-4 text-font02">
             <span className="text-4xl font-bold">{cdn}</span>

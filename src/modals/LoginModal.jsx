@@ -37,10 +37,10 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 text-font01">
-      <div className='grid grid-cols-2 w-[1200px] h-[700px] mx-auto'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 w-full px-4 xl:px-0 max-w-[600px] xl:max-w-[1200px] h-full xl:max-h-[700px] max-h-[560px] mx-auto relative'>
       {/* ------------------------ Login Form ------------------------ */}
-        <div className="flex flex-col items-center justify-center bg-font03 w-full p-8 relative">
-          <h2 className="text-3xl font-bold mb-5 text-center pt-10">Login to Account</h2>
+        <div className="flex flex-col items-center justify-center bg-font03 w-full xl:p-8 relative">
+          <h2 className="text-3xl font-bold mb-5 text-center xl:pt-10">Login to Account</h2>
           <p className='text-center mb-8'>Please enter your information to create account</p>
           <form onSubmit={handleSubmit} className='w-full px-6'>
             {/* Email Field */}
@@ -111,7 +111,7 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
           </form>
         </div>
         {/* ------------------------ Login Form Extra Part ------------------------ */}
-        <div className='flex items-center justify-center bg-font02 text-white relative'>
+        <div className='hidden xl:flex items-center justify-center bg-font02 text-white relative'>
           <div className='w-[300px] flex flex-col items-center justify-center text-center '>
             <h2 className='text-4xl text-font03 font-bold my-16'>Welcome Back!</h2>
             <p className='text-lg font-semibold my-5'>Please Sign in into your account with the given details to continue</p>
@@ -123,16 +123,16 @@ const LoginModal = ({ isOpen, onClose, openRegisterModal,openForgotModal,loginUs
               Sign Up
             </button>
           </div>
+        </div>
           {/* Close Button */}
-          <div className="flex justify-center mt-4 absolute top-0 right-4">
+          <div className="flex justify-center mt-4 absolute top-0 right-6 xl:right-4">
             <button
               onClick={onClose}
               className=""
             >
-              <IoClose className='text-font03 hover:text-opacity-70' size={40}/>
+              <IoClose className='xl:text-font03 text-font02 hover:text-opacity-70' size={40}/>
             </button>
           </div>
-        </div>
       </div>
     </div>
   );
