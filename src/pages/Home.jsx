@@ -32,7 +32,7 @@ function Home() {
                   </button>
               </div>
           </div>
-          {isMembershipModalOpen && <div className="fixed inset-0 z-10 flex justify-center items-center">
+          {isMembershipModalOpen && <div className="fixed inset-0 z-50 flex justify-center items-center">
             <MembershipModal onCloseMembershipModal={handleMembershipModal}/>
           </div>}
       </section>
