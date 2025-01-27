@@ -28,6 +28,7 @@ const AcademyToStudio = () => {
 
         <h2 className='text-4xl mdl:text-5xl py-5 text-font01'>Academy to Studio</h2>
 
+        {/* ------------ Search option -------------- */}
         <div className='bg-primary p-3 my-8 flex justify-end items-center gap-3 '>
           <div className="bg-gray-100 text-font02 font-light text-xl py-3 p-2 flex justify-start items-center gap-3 w-full max-w-[600px]">
             <RiSearch2Line className='cursor-pointer text-font02' size={30}/>

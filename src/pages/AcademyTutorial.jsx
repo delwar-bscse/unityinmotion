@@ -34,13 +34,14 @@ const AcademyTutorial = () => {
 
         <h2 className='text-5xl py-5 text-font01'>Academy to Studio</h2>
 
-        <div className='bg-primary p-3 my-8 flex justify-end items-center gap-3'>
-          <div className="bg-gray-100 text-font02 font-light text-xl py-3 p-2 flex justify-start items-center gap-3 w-[500px]">
+        {/* ------------ Search option -------------- */}
+        <div className='bg-primary p-3 my-8 flex justify-end items-center gap-3 '>
+          <div className="bg-gray-100 text-font02 font-light text-xl py-3 p-2 flex justify-start items-center gap-3 w-full max-w-[600px]">
             <RiSearch2Line className='cursor-pointer text-font02' size={30}/>
             <input 
               type="text" 
               placeholder="Search here..." 
-              className="bg-transparent outline-none flex-1 text-font02 placeholder:text-font02" 
+              className="bg-transparent outline-none grow text-font02 placeholder:text-font02 w-full" 
               value={searchTerm} 
               onChange={handleSearchChange}
             />
@@ -50,8 +51,8 @@ const AcademyTutorial = () => {
           </div>
         </div>
 
+        {/* ------------ Video side -------------- */}
         <div className='flex flex-col lgl:flex-row gap-8'>
-          {/* ------------ Video side -------------- */}
           <div className=' basis-2/3'>
             <div className="flex flex-col items-center justify-center">
               <video
