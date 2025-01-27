@@ -9,7 +9,7 @@ const OrderPage = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 py-10'>
+      <div className='w-full max-w-[1280px] px-2 mx-auto space-y-6 py-10'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -23,17 +23,17 @@ const OrderPage = () => {
         
         <h2 className='text-6xl'>Order Page</h2>
 
-        <div>
-          <div className=''>
+        <div className=''>
+          <div className='w-full overflow-x-auto'>
             {orders?.length===0 ? (
               <p className='text-center text-xl font-semibold py-10'>No orders placed yet.</p>
             ) : (
-              <div className='space-y-6'>
+              <div className='space-y-6 w-full min-w-[620px] max-w-[900px] mx-auto'>
                 {orders.map(item => (
                   <div key={item.uid} className='flex justify-between items-center '>
                     <div className='flex items-center gap-10 grow'>
                       <div className='bg-white p-4  shadow-[2px_2px_10px_rgba(0,0,0,0.25)]'>
-                        <img src={item?.item?.productImg} alt="product" className='w-[150px] h-[150px]'/>
+                        <img src={item?.item?.productImg} alt="product" className='max-w-[150px] max-h-[150px]'/>
                       </div>
                       <table className="table-auto">
                         <tbody>

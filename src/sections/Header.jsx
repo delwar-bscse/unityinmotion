@@ -147,13 +147,14 @@ const Header = () => {
       </div>
 
       {/* --------------------------- Mobile Menu --------------------------- */}
-      <div className={`absolute box-border top-[87px] md:top-[99px] left-0 bg-secondary w-[260px] ${isMobileMenuOpen ? 'translate-x-[0px]' : '-translate-x-[300px]'} duration-300 px-4`} style={{ height: 'calc(100vh - 88px)' }}>
+      <div className={`absolute box-border top-[87px] md:top-[99px] left-0 bg-secondary w-[240px] ${isMobileMenuOpen ? 'translate-x-[0px]' : '-translate-x-[300px]'} duration-300 px-4`} style={{ height: 'calc(100vh - 88px)' }}>
         {/* --------------------------- Product Search, Cart, Notification --------------------------- */}
         <div className="mdl:hidden flex items-center gap-4 my-6">
           <button onClick={openProductSearchModal} className="text-font01 font-bold"><FiSearch  size={28} /></button>
           <Link onClick={()=>setIsMobileMenuOpen(false)} to="/cart" className="text-font01 font-bold"><LuShoppingCart  size={28} /></Link>
           {user && <Link onClick={()=>setIsMobileMenuOpen(false)} to="/notifications" className="text-font01 font-bold"><MdOutlineNotifications  size={28} /></Link>}
         </div>
+        {/* --------------------------- Nav list --------------------------- */}
         <ul className="text-base sm:text-xl flex flex-col font-semibold tracking-wider gap-6 my-6 text-font01">
           {navLinks?.map((singleLink,i)=>(
             <li onClick={()=>{setIsMobileMenuOpen(false)}} key={i}>
@@ -161,9 +162,10 @@ const Header = () => {
             </li>
           ))}
         </ul>
+        {/* --------------------------- Sign in & Sign up --------------------------- */}
         <div className="xl:hidden text-sm gap-5 flex flex-col">
-          <button onClick={openLoginModal}  className="border-[1px] border-primary text-primary px-10 py-4">Log In</button>
-          <button onClick={openRegisterModal} className="bg-primary text-gray-100 px-10 py-4">Sign Up</button>
+          <button onClick={openLoginModal}  className="border-[1px] border-primary text-primary px-10 py-3">Log In</button>
+          <button onClick={openRegisterModal} className="bg-primary text-gray-100 px-10 py-3">Sign Up</button>
         </div>
       </div>
     </header>

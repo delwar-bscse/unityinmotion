@@ -58,13 +58,13 @@ const ProductPayment = () => {
         
         <h2 className='text-6xl'>Details</h2>
 
-        <div className='grid grid-cols-1 xl:grid-cols-2 gap-16'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 xl:gap-6'>
           <div className='space-y-5'>
-            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full max-w-[500px] h-full max-h-[500px] py-20'>
-              <img src={singleProduct?.productImg} alt="product image" className='w-full h-full group-hover:scale-110 transition-all duration-300' />
+            <div className='border-2 border-gray-200 p-5 group flex justify-center items-center w-full h-full max-h-[500px] xl:py-20'>
+              <img src={singleProduct?.productImg} alt="product image" className='w-auto h-full group-hover:scale-110 transition-all duration-300' />
             </div>
           </div>
-          <div className='flex flex-col items-start gap-8'>
+          <div className='flex flex-col items-start'>
             <form onSubmit={handleSubmit} className='w-full'>
               {/* Address Field */}
               <div className="mb-4">

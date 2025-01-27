@@ -14,7 +14,7 @@ const FeedbackModal = ({isFeedbackOpen,closeFeedback}) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 mdl:p-0" >
-      <div  className=" py-6 px-2 mdl:px-10 w-full max-w-[600px] bg-white shadow-lg rounded-md text-font01 relative">
+      <div  className="py-6 px-2 mdl:px-10 w-full max-w-[600px] bg-white shadow-lg rounded-md text-font01 relative">
         <h2 className="text-4xl font-bold text-center my-10 mdl:my-20">Write Your Feedback</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

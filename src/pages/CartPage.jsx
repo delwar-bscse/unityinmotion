@@ -49,8 +49,8 @@ const CartPage = () => {
               <p className='text-font01 text-xl'>{item.date}</p>
               <p className='text-2xl font-semibold'>{item.quantity}</p>
               <p className='text-2xl font-semibold'>${item.totalPrice} CND</p>
-              <button onClick={()=>confirmOrder(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'> Confirm Order</button>
-              <button onClick={()=>removeFromCartHandler(item?.id)} className='text-xl text-font03 bg-gray-800 py-2 px-6'>Remove</button>
+              <button onClick={()=>confirmOrder(item?.id)} className='text-sm md:text-xl text-font03 bg-gray-800 py-2 px-6'> Confirm Order</button>
+              <button onClick={()=>removeFromCartHandler(item?.id)} className='text-sm md:text-xl text-font03 bg-gray-800 py-2 px-6'>Remove</button>
             </li>
           ))}
         </ul>)

@@ -19,7 +19,7 @@ const EditProfile = () => {
   };
 
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <h2 className="text-3xl font-bold mb-5 text-center pt-10">Edit Profile</h2>
       <form onSubmit={handleSubmit} className='text-font01 text-opacity-50 p-3'>
         {/* Username Field */}

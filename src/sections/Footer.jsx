@@ -14,7 +14,7 @@ const Footer = () => {
   const [email, setEmail] = useState('');
   return (
     <footer>
-      <div className='w-full bg-primary text-font03 pt-20 pb-32'>
+      <div className='w-full bg-primary text-font03 py-10 xl:pt-20 xl:pb-32'>
       {/* --------------------------- Footer Up --------------------------- */}
         <div className='w-full max-w-[1280px] px-4 xl:px-0 mx-auto grid grid-cols-1 mdl:grid-cols-2 lgl:grid-cols-4 gap-12 md:gap-8'>
           {/* --------------------------- Column 01 --------------------------- */}

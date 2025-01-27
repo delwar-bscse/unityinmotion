@@ -31,7 +31,7 @@ const BlogDetails = () => {
 
   return (
     <div className='text-font01'>
-      <div className='container mx-auto space-y-6 pt-10 pb-28'>
+      <div className='w-full max-w-[1280px] px-4 mx-auto space-y-6 pt-10 pb-28'>
 
         <div className="text-2xl text-font01 text-opacity-70 flex items-center  gap-3">
             <Link to="/" className="flex items-center  gap-2 hover:text-red-700">
@@ -51,7 +51,7 @@ const BlogDetails = () => {
             <p>|</p>
             <p className="flex justify-start items-center gap-2">{date}</p>
           </div>
-          <div className='w-full h-[600px] overflow-hidden flex justify-center items-center mt-16'>
+          <div className='w-full max-h-[600px] overflow-hidden flex justify-center items-center mt-16'>
             <img className='w-full' src={detailImage} alt='Yoga' />
           </div>
           <div className='flex flex-col gap-5 mt-6 leading-10 text-lg text-font01 text-opacity-70'>
