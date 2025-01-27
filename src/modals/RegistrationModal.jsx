@@ -46,13 +46,13 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
           </div>
         </div>
         {/* ------------------------ Registration Form ------------------------ */}
-        <div className="bg-font03 w-full p-8 max-md:pt-0 relative">
+        <div className="bg-font03 w-full px-4 mdl:px-8 xl:py-8 py-2 relative">
           <h2 className="text-xl mdl:text-3xl font-bold mb-5 text-center pt-20">Register A New Account</h2>
           <p className='text-sm dm:text-base text-center mb-8'>Please enter your information to create account</p>
           <form onSubmit={handleSubmit}>
             {/* Username Field */}
-            <div className="mb-4">
-              <label className="block text-sm font-semibold mb-2" htmlFor="username">Username</label>
+            <div className="mb-2 xl:mb-4">
+              <label className="block text-sm font-semibold mb-1 xl:mb-2" htmlFor="username">Username</label>
               <input
                 type="text"
                 id="username"
@@ -65,8 +65,8 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
             </div>
 
             {/* Email Field */}
-            <div className="mb-4">
-              <label className="block text-sm font-semibold mb-2" htmlFor="email">Email</label>
+            <div className="mb-2 xl:mb-4">
+              <label className="block text-sm font-semibold mb-1 xl:mb-2" htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -79,8 +79,8 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
             </div>
 
             {/* Contact Field */}
-            <div className="mb-4">
-              <label className="block text-sm font-semibold mb-2" htmlFor="contact">Contact</label>
+            <div className="mb-2 xl:mb-4">
+              <label className="block text-sm font-semibold mb-1 xl:mb-2" htmlFor="contact">Contact</label>
               <input
                 type="text"
                 id="contact"
@@ -93,8 +93,8 @@ const RegistrationModal = ({ isOpen, onClose, openLoginModal }) => {
             </div>
 
             {/* Password Field */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-2" htmlFor="password">Password</label>
+            <div className="mb-3 xl:6">
+              <label className="block text-sm font-semibold mb-1 xl:mb-2" htmlFor="password">Password</label>
               <div className='relative'>
                 <input
                   type={showPassword ? 'text' : 'password'}
